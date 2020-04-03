@@ -1,5 +1,5 @@
 # WAH-Bitmap-Compression
-* This Python program creates both unsorted and sorted versions of a bitmap index by reading from a data file (animals.txt) containing information about pets, their age, and whether they are adopted or not. 
+* This Python script creates both unsorted and sorted versions of a bitmap index by reading from a substantially large data file (animals.txt) containing information about pets, their age, and whether they are adopted or not. 
 * Both bitmaps are ouput into files bitmapOutput.txt and sortedBitmapOutput.txt.
 * The first bitmap has the same order as the data file, with the second bitmap being sorted lexicographically.
 * The bitmap indexes have a column for each possible animal, in the order represented in its domain. Following the four animal columns, the bitmap has 10 columns that represent the bins for the Age attribute. Each bin is 10 long, i.e. 1-10, 11-20, 21-30, etc. The last two columns of the bitmap represent True and False in that order for the Adopted attribute. 
@@ -8,7 +8,7 @@
 * I attempted to code for special cases when reading fills/literals from the columns of the bitmap including:
     * compressing saved runs and literal < 31/63 at the end of a column
     * compressing back to back fill runs of 1's and 0's with no literal in between 
-# Example Database:
+# Example Database Bitmap Creation:
 ![Alt text](/screenshots/sc2.png?raw=true "sc2")
 # WAH 32/64 Bit Compression Algorithm:
 ![Alt text](/screenshots/sc3.png?raw=true "sc3")
