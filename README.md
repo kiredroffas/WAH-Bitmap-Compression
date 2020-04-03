@@ -11,7 +11,7 @@
 # Example Database:
 ![Alt text](/screenshots/sc2.png?raw=true "sc2")
 # WAH 32/64 Bit Compression Algorithm:
-![Alt text](/screenshots/sc2.png?raw=true "sc2")
+![Alt text](/screenshots/sc3.png?raw=true "sc3")
 * The above algorithm shows 32 bit compression, 64 bit compression is the same just change the 31/32 in the steps to 63/64.
 # To run:
 * To run this program: python ./bitmapcompress.py   
@@ -20,7 +20,7 @@
 # bitmapcompress.py Output
 ![Alt text](/screenshots/sc1.png?raw=true "sc1")
 # Output Testing
-* I tested my program with the data file animals_test.txt (smaller version of animals.txt), which had an exact diff match for each of the 4 files included (animals_test_bitmap, animals_test_bitmap_sorted, animals_compressed_32, animals_compressed_sorted_32).
+* I tested my program with the test data file animals_test.txt (smaller version of animals.txt), which had an exact diff match for each of the 4 files included (animals_test_bitmap, animals_test_bitmap_sorted, animals_compressed_32, animals_compressed_sorted_32).
 # Analyis
 * Created files:
     * bitmapOutput.txt: bitmap created from the original animals.txt (unsorted)
