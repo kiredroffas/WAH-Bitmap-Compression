@@ -11,11 +11,25 @@
 # Example Database Bitmap Creation:
 ![Alt text](/screenshots/sc2.png?raw=true "sc2")
 # WAH 32/64 Bit Compression Algorithm:
-![Alt text](/screenshots/sc3.png?raw=true "sc3")
-* The above algorithm shows 32 bit compression, 64 bit compression is the same just change the 31/32 in the steps to 63/64.
+* The WAH compression algorithm is as follows:
+    1. Take 31/63 bits from the input.
+    2. If all zeros, then increment the zero run count by 1 (stored as binary).
+        * Continue incrementing zero run count by 1 if next 31/63 bits are all zeros.
+        * If next 31/63 bits are not all zeros then output 32/64 bits with bit 0 = 1 and bit 1 = 0, with bits 2-32/64 being the number of zero count runs (binary number).
+    3. If all ones, then increment the ones run count by 1 (stored as binary).
+        * Continue incrementing ones run count by 1 if next 31/63 bits are all ones.
+        * If next 31/63 bits are not all ones then output 32/64 bits with bit 0 = 1 and bit 1 = 1, with bits 2-32/64 being the number of ones count runs (binary number).
+    4. Else if not all zeros or ones, then bit string is stored as a literal, with bit 0 = 0, with bits 1-32/64 being the actual literal bit string (combination of zeros/ones).
+## Example WAH 32 Bit
+* Runs
+    * 2 runs of 31 zeros = <b>10</b>000000 00000000 00000000 00000010 (compressed) = 00000000 00000000 00000000 0000000 00000000 00000000 00000000 0000000 (uncompressed)
+    * 2 runs of 31 ones = <b>11</b>000000 00000000 00000000 00000010 (compressed) = 11111111 11111111 11111111 1111111 11111111 11111111 11111111 1111111 (uncompressed)
+* Literals
+    * mix of 31 zeros and ones = <b>0</b>1010111 10000110 00101010 11010111 (compressed) = 1010111 10000110 00101010 11010111 (uncompressed)
 # To run:
 * To run this program: python ./bitmapcompress.py   
     * May have to chmod 755
+    * animals.txt must be in the same directory as bitmapcompress.py
 * Program will ouput total fills/literals per file, and six output .txt files 
 # bitmapcompress.py Output
 ![Alt text](/screenshots/sc1.png?raw=true "sc1")
