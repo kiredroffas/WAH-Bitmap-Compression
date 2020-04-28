@@ -35,7 +35,7 @@
 ![Alt text](/screenshots/sc1.png?raw=true "sc1")
 # Output Testing
 * I tested my program with the test data file animals_test.txt (smaller version of animals.txt), which had an exact diff match for each of the 4 files included (animals_test_bitmap, animals_test_bitmap_sorted, animals_compressed_32, animals_compressed_sorted_32).
-# Analyis
+# Analysis
 * Created files:
     * bitmapOutput.txt: bitmap created from the original animals.txt (unsorted)
     * sortedBitmapOutput.txt: bitmap created from the sorted animals.txt (sorted)
